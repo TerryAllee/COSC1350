@@ -1,0 +1,59 @@
+<!--
+    Student Name: Terry Allee
+    File Name: calculator.html
+    Date: October 7, 2024
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title> Tip Calculator</title>
+    <script src="scripts/calculator.js" defer></script>
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="contact.html">Contact Me</a></li>
+            <li><a href="calculator.html">Tip Calculator</a></li>
+        </ul>
+    </nav>
+            
+    <!--Tip Calculator Form-->
+    <div class="calculator-container">
+        <h1>Tip Calculator</h1>
+        <form id="tipCalculatorForm">
+            <label for="billAmount">Bill Amount:</label>
+            <input type="number" id="billAmount" name="billAmount" placeholder="Enter the bill amount" required>
+
+            <label for ="serviceQuality">Service Quality:</label>
+            <select id="serviceQuality" name="serviceQuality" required>
+                <option value="0.25">Excellent (25%)</option>
+                <option value="0.20">Good (20%)</option>
+                <option value="0.15">Fair (15%)</option>
+                <option value="0.10">Needs Improvement (10%)</option>
+            </select>
+
+            <button type="button" onclick="calculateTip()">Calculate Tip</button>
+        </form>
+        <p id="tipAmount"></p>
+        <p id="totalAmount"></p>
+    </div>
+    
+    <script>
+        //JavaScript function for form input
+        function calculateTip() {
+            //Get input values
+            const billAmount = parseFloat(document.getElementById("billAmount").value);
+            const serviceQuality = document.getElementById('serviceQuality').value;
+
+            //Enter the values to the console to verify
+            console.log('Bill Amount', billAmount)
+            console.log('Service Quality', serviceQuality);
+        }
+    </script>
+
