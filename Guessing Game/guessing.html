@@ -1,0 +1,49 @@
+
+<!--this is a commment about file about:html
+	Student Name: Terry Allee
+	<!-File Name: Guessing HTML
+	Date: November 4, 2024
+ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to Terry's Guessing Game</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="guessing.html">Guessing Game</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Guess the Number Game</h1>
+        <form id="guessForm">
+            <label for="guess">Enter your guess:</label>
+            <input type="number" id="guess" min="1" max="100" required>
+            <button type="button" id="submitGuess">Submit Guess</button>
+        </form>
+        <div id="result"></div>
+        <div id="previousGuesses"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Terry Allee. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to your JavaScript file -->
+    <script src="scripts.js"></script> 
+</body>
+</html>
