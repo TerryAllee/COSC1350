@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+    <script>
+        window.onload = function() {
+        let cx = document.querySelector("canvas").getContext("2d");
+
+
+        // Function to draw a trapezoid
+        function drawTrapezoid(x, y, topWidth, bottomWidth, height) {
+            cx.beginPath();
+            cx.moveTo(x - topWidth / 2, y);
+            cx.lineTo(x + topWidth / 2, y);
+            cx.lineTo(x + bottomWidth / 2, y + height);
+            cx.lineTo(x - bottomWidth / 2, y + height);
+            cx.closePath();
+            cx.stroke();
+        }
+        // Function to draw a diamond
+        function drawDiamond(x, y, size)  {
+            cx.save();
+            cx.translate(x, y);
+            // Rotate by 45 degrees (1/4r radians)
+            cx.rotate(Math.PI / 4); 
+            cx.fillStyle = "red";
+            cx.fillRect(-size / 2, -size / 2, size, size);
+            cx.restore();
+        }
+
+        // Function to draw a zigzagging line
+        function drawZigZig(x, y, length, segments, amplitude) {
+            cx.beginPath();
+            cx.moveTo(x, y);
+            for (let i = 0; i < segments; i++) {
+                x += length / segments;
+                y += i % 2 === 0 ? amplitude : -amplitude;
+                cx.lineTo(x, y);
+            }
+            cx.stroke();
+        }
+
+        // Function to draw a spiral
+        function drawSpiral(x, y, segments, lengthIncrement) {
+            let angle = 0;
+            let radius= 0;
+            cx.beginPath();
+            cx.moveTo(x, y);
+            for (let i = 0; i < segments; i++) {
+                radius += lengthIncrement;
+                x += Math.cos(angle) * radius;
+                y += Math.sin(angle) * radius;
+                // Adjust for a tighter spiral
+                angle += Math.PI / 10;
+                cx.lineTo(x, y); 
+        }
+        cx.stroke();
+    }
+    
+        // Function to draw a star
+        function drawStar(x, y, points, innerRadius, outerRadius) {
+            let angle = Math.PI / points;
+            cx.beginPath();
+            cx.fillStyle = "yellow";
+        for (let i = 0; i < points * 2; i++) {
+            let r = i % 2 === 0 ? outerRadius : innerRadius;
+            let pointX = x + Math.cos(i * angle) * r;
+            let pointY = y + Math.sin(i * angle) * r;
+            cx.lineTo(pointX, pointY);
+        }
+        cx.closePath();
+        cx.fill();
+    }
+
+        // Draw each shape
+        drawTrapezoid(100, 50, 120, 50, 50);
+        drawDiamond(250, 75, 50);
+        drawZigZig(50, 150, 200, 10, 15);
+        drawSpiral(400, 200, 100, 1.5);
+        drawStar(500, 100, 5, 20, 40);
+        };
+    </script>
+</body>
+</html>
