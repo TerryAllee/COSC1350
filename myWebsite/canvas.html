@@ -1,20 +1,24 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canvas</title>
+    <title>Canvas Drawing</title>
 </head>
 <body>
-    <canvas width="600" height="400"></canvas>
+    <!-- Canvas shapes to be drawn-->
+    <canvas width="750" height="500"></canvas>
 
     <script>
+        //Run the code after loading page
         window.onload = function() {
-        let cx = document.querySelector("canvas").getContext("2d");
+            // access canvas to get the 2D drawing context
+            let cx = document.querySelector("canvas").getContext("2d");
 
 
-        // Function to draw a trapezoid
+        // Draw a trapezoid
         function drawTrapezoid(x, y, topWidth, bottomWidth, height) {
             cx.beginPath();
             cx.moveTo(x - topWidth / 2, y);
@@ -24,7 +28,7 @@
             cx.closePath();
             cx.stroke();
         }
-        // Function to draw a diamond
+        // Draw a diamond
         function drawDiamond(x, y, size)  {
             cx.save();
             cx.translate(x, y);
@@ -35,7 +39,7 @@
             cx.restore();
         }
 
-        // Function to draw a zigzagging line
+        // Draw a zigzag line
         function drawZigZig(x, y, length, segments, amplitude) {
             cx.beginPath();
             cx.moveTo(x, y);
@@ -47,7 +51,7 @@
             cx.stroke();
         }
 
-        // Function to draw a spiral
+        // Draw a spiral
         function drawSpiral(x, y, segments, lengthIncrement) {
             let angle = 0;
             let radius= 0;
@@ -64,7 +68,7 @@
         cx.stroke();
     }
     
-        // Function to draw a star
+        // Draw a star
         function drawStar(x, y, points, innerRadius, outerRadius) {
             let angle = Math.PI / points;
             cx.beginPath();
@@ -76,6 +80,7 @@
             cx.lineTo(pointX, pointY);
         }
         cx.closePath();
+        // Color in the star shape
         cx.fill();
     }
 
