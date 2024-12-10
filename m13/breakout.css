@@ -1,6 +1,6 @@
 /*
 Author: Terry Allee
-Date: November 17th, 2024
+Date: November 17th, 2024, December 
 File Name: breakout.css
 */
 
@@ -10,20 +10,30 @@ body, header, nav, main, footer, img, h1, h3, ul {
     padding: 0;
     border: 0;
 }
-/* center the header and Canvas */
+/* Body Style */
 body {
     text-align: center;
     background-color: purple;
+    color: white;
+    font-family: Arial, sans-serif;
 }
 
+/* Center content */
 canvas {
-    /* treat canvas as a block to center */
     display: block;
-    /* Center canvas horizonal */
     margin: 0 auto;
-    /* Keep the border style */
-    border-style: solid;
-}
+    background-color: white;
+    border: 2px solid black;
+  }
+  
+  /* Score the container for styling */
+  #scoreContainer {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px auto;
+    text-align: center;
+    color: white;
+  }
 /* 
 Remember, since the canvas element has the id=myCanvas, selecting it
 for styling can be as easy as:
@@ -31,16 +41,20 @@ for styling can be as easy as:
  #myCanvas {
     border-style: solid;
 } 
-    
-Of course, since there will only be one canvas element on the page, you could also just use
 
-canvas {
-    border-style: solid;
-}
-
-Tip: I like to style my homework assignments to match my text editor's theme.
-*/
-
-canvas {
-    border-style: solid;
+/* Reset Button Styling */
+#resetButton {
+    margin: 20px auto;
+    display: block;
+    padding: 10px 20px;
+    background-color: #007acc;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer
+  }
+/* Resets the Hover effect */
+#resetButton:hover {
+    background-color: #007acc;
 }

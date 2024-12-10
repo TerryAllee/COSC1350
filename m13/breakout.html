@@ -1,24 +1,67 @@
-<!DOCTYPE html>
-
 <!--
 	Student Name: Terry Allee
 	File Name: breakout.html
-	Date:
+	Date: November 25, 2024/ December 7th, 2024
  -->
 
-
-<html lang="en-US">
-
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="utf-8" />
-    <title>Guessing Game</title>
-    <link href="breakout.css" rel="stylesheet" type="text/css">
-  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakout Game</title>
+    <link rel="stylesheet" href="breakout.css">
+    <style>
+      canvas {
+        background-color: white;
+        border: 2px solid black;
+        display: block;
+        margin: 0 auto;
+      }
+      body {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #800080;
+      color: white;
+    }
 
-  <body>
+    /* Score container styling */
+    #scoreContainer {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 10px auto;
+            text-align: center;
+        }
+    <!-- Resets the button style*/
+        button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #000;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #333;
+    }
+    </style>
+</head>
+<body>
     <h1>Breakout Game</h1>
-    <canvas id="myCanvas" width="600" height="400"></canvas>
-    <script src="breakout.js"></script>
-  </body>
+    <!--Instructions for the game-->
+    <p> Use the left and right arrow keys to move the paddle. Hit all the bricks to win!</p> 
+    
+    <!-- Score display -->
+    <div id="scoreContainer">Score: 0</div>
 
+    <!--Canvas elements for the game-->
+    <canvas id="myCanvas" width="600" height="600"></canvas>
+    
+    <!--Reset button-->
+    <button id="resetButton">Reset</button>
+    
+    <!--Link to JavaScript file-->
+    <script src="breakout.js"></script>
+</body>
 </html>
